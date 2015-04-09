@@ -6,6 +6,8 @@ Colorizes the progress indicators
 This is an adoption of [pytest-greendots](https://pypi.python.org/pypi/pytest-greendots)
 which sadly does not have an upstream repository.
 
+![Screenshot](screenshot.png)
+
 Usage
 -----
 
