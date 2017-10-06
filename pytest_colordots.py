@@ -1,18 +1,20 @@
-from blessings import Terminal
+from colorama import init
+from colorama import Fore
+init()
 
-t = Terminal()
 
 def pytest_report_teststatus(report):
     if report.when == 'call':
         if hasattr(report, 'wasxfail'):
             if report.skipped:
-                return "xfailed", t.yellow(u"x"), "xfail"
-            elif report.failed:
-                return "xpassed", t.yellow("p"), "XPASS"
+                return "xfailed", Fore.YELLOW + "x", "xfail"
+            elif report.passed:
+                return "xpassed", Fore.YELLOW + "p", ("XPASS",
+                                                      {'yellow': True})
         if report.passed:
-            letter = t.green(u".")
+            letter = Fore.GREEN + "."
         elif report.skipped:
-            letter = t.yellow(u"s")
+            letter = Fore.YELLOW + "s"
         elif report.failed:
-            letter = t.red(u"F")
+            letter = Fore.RED + "F"
         return report.outcome, letter, report.outcome.upper()

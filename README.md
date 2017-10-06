@@ -3,9 +3,6 @@ pytest-colordots
 
 Colorizes the progress indicators
 
-This is an adoption of [pytest-greendots](https://pypi.python.org/pypi/pytest-greendots)
-which sadly does not have an upstream repository.
-
 ![Screenshot](screenshot.png)
 
 Usage
@@ -20,3 +17,10 @@ and then run your test suite:
     py.test
 
 and marvel at all the pretty colors
+
+
+Compatibility
+-------------
+
+This plugin uses colorama and should therefore work on Linux, OSX, BSD and
+Windows.
