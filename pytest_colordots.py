@@ -7,14 +7,13 @@ def pytest_report_teststatus(report):
     if report.when == 'call':
         if hasattr(report, 'wasxfail'):
             if report.skipped:
-                return "xfailed", Fore.YELLOW + "x", "xfail"
+                return "xfailed", Fore.YELLOW + "x" + Fore.RESET, "xfail"
             elif report.passed:
-                return "xpassed", Fore.YELLOW + "p", ("XPASS",
-                                                      {'yellow': True})
+                return "xpassed", Fore.YELLOW + "p" + Fore.RESET, ("XPASS", {'yellow': True})
         if report.passed:
-            letter = Fore.GREEN + "."
+            letter = Fore.GREEN + "." + Fore.RESET
         elif report.skipped:
-            letter = Fore.YELLOW + "s"
+            letter = Fore.YELLOW + "s" + Fore.RESET
         elif report.failed:
-            letter = Fore.RED + "F"
+            letter = Fore.RED + "F" + Fore.RESET
         return report.outcome, letter, report.outcome.upper()

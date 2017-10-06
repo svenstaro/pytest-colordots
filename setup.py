@@ -16,7 +16,7 @@ setup(
     author_email='svenstaro@gmail.com',
     url='https://github.com/svenstaro/pytest-colordots',
     long_description=read("README.md"),
-    version='1.0',
+    version='1.1',
     py_modules=['pytest_colordots'],
     entry_points={'pytest11': ['colordots = pytest_colordots']},
     install_requires=['pytest>=2.0', 'colorama'],
