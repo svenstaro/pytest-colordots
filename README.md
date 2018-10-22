@@ -1,3 +1,5 @@
+**NOTE: This is deprecated as this is now included in pytest itself!**
+
 pytest-colordots
 ================
 
